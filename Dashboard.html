@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TracKarLe - Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h1>Trac<span>KarLe</span></h1>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-link active">
+                    <span>▣</span>
+                    Dashboard
+                </a>
+
+                <a href="applications.html" class="nav-link">
+                    <span>▤</span>
+                    Applications
+                </a>
+
+                <a href="interviews.html" class="nav-link">
+                    <span>◷</span>
+                    Interviews
+                </a>
+
+                <a href="analytics.html" class="nav-link">
+                    <span>▥</span>
+                    Analytics
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="nav-link">
+                    <span>⚙</span>
+                    Settings
+                </a>
+
+                <a href="index.html" class="nav-link logout">
+                    <span>↪</span>
+                    Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <!-- TOP NAVBAR -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h2>Dashboard</h2>
+
+                    <p class="welcome-text">
+                        Welcome back! Here's your career overview.
+                    </p>
+
+                </div>
+
+                <div class="profile">
+
+                    <div class="notification">
+                        🔔
+                    </div>
+
+                    <div class="avatar">
+                        D
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>Divyansh</strong>
+
+                        <span>Job Seeker</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- DASHBOARD CONTENT -->
+
+            <section class="dashboard">
+
+                <!-- STAT CARDS -->
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            📋
+                        </div>
+
+                        <div>
+                            <p>Total Applications</p>
+                            <h3 id="totalApplications">0</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            🎯
+                        </div>
+
+                        <div>
+                            <p>Interviews</p>
+                            <h3 id="totalInterviews">0</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            🏆
+                        </div>
+
+                        <div>
+                            <p>Offers</p>
+                            <h3 id="totalOffers">0</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            ❌
+                        </div>
+
+                        <div>
+                            <p>Rejected</p>
+                            <h3 id="totalRejected">0</h3>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIVITY SECTION -->
+
+                <div class="dashboard-grid">
+
+                    <div class="card activity-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h3>Application Activity</h3>
+
+                                <p>
+                                    Your applications over the last 7 days
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="chart-placeholder">
+
+                            <div class="chart-bar" style="height: 35%;">
+                                <span>Mon</span>
+                            </div>
+
+                            <div class="chart-bar" style="height: 55%;">
+                                <span>Tue</span>
+                            </div>
+
+                            <div class="chart-bar" style="height: 45%;">
+                                <span>Wed</span>
+                            </div>
+
+                            <div class="chart-bar" style="height: 75%;">
+                                <span>Thu</span>
+                            </div>
+
+                            <div class="chart-bar" style="height: 60%;">
+                                <span>Fri</span>
+                            </div>
+
+                            <div class="chart-bar" style="height: 85%;">
+                                <span>Sat</span>
+                            </div>
+
+                            <div class="chart-bar" style="height: 50%;">
+                                <span>Sun</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- UPCOMING INTERVIEWS -->
+
+                    <div class="card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <h3>Upcoming Interviews</h3>
+
+                                <p>
+                                    Your next interviews
+                                </p>
+
+                            </div>
+
+                            <a href="interviews.html">
+                                View all
+                            </a>
+
+                        </div>
+
+
+                        <div class="interview-item">
+
+                            <div class="company-logo">
+                                G
+                            </div>
+
+                            <div class="interview-details">
+
+                                <strong>Google</strong>
+
+                                <span>Frontend Intern</span>
+
+                                <small>
+                                    Aug 12 · 11:00 AM
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="interview-item">
+
+                            <div class="company-logo">
+                                A
+                            </div>
+
+                            <div class="interview-details">
+
+                                <strong>Amazon</strong>
+
+                                <span>SDE Intern</span>
+
+                                <small>
+                                    Aug 15 · 2:00 PM
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+    function updateDashboard() {
+
+    const applications =
+        JSON.parse(localStorage.getItem("applications")) || [];
+
+
+    const totalApplications =
+        applications.length;
+
+
+    const totalInterviews =
+        applications.filter(function (application) {
+
+            return application.status === "Interview";
+
+        }).length;
+
+
+    const totalOffers =
+        applications.filter(function (application) {
+
+            return application.status === "Offer";
+
+        }).length;
+
+
+    const totalRejected =
+        applications.filter(function (application) {
+
+            return application.status === "Rejected";
+
+        }).length;
+
+
+    const totalApplicationsElement =
+        document.getElementById("totalApplications");
+
+    const totalInterviewsElement =
+        document.getElementById("totalInterviews");
+
+    const totalOffersElement =
+        document.getElementById("totalOffers");
+
+    const totalRejectedElement =
+        document.getElementById("totalRejected");
+
+
+    if (totalApplicationsElement) {
+
+        totalApplicationsElement.textContent =
+            totalApplications;
+
+    }
+
+
+    if (totalInterviewsElement) {
+
+        totalInterviewsElement.textContent =
+            totalInterviews;
+
+    }
+
+
+    if (totalOffersElement) {
+
+        totalOffersElement.textContent =
+            totalOffers;
+
+    }
+
+
+    if (totalRejectedElement) {
+
+        totalRejectedElement.textContent =
+            totalRejected;
+
+    }
+
+}
+
+
+updateDashboard();
+
+</body>
+
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TracKarLe - Applications</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+                <h1>Trac<span>KarLe</span></h1>
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a href="dashboard.html" class="nav-link">
+                    <span>▣</span>
+                    Dashboard
+                </a>
+
+                <a href="applications.html" class="nav-link active">
+                    <span>▤</span>
+                    Applications
+                </a>
+
+                <a href="interviews.html" class="nav-link">
+                    <span>◷</span>
+                    Interviews
+                </a>
+
+                <a href="analytics.html" class="nav-link">
+                    <span>▥</span>
+                    Analytics
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#" class="nav-link">
+                    <span>⚙</span>
+                    Settings
+                </a>
+
+                <a href="index.html" class="nav-link">
+                    <span>↪</span>
+                    Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h2>Applications</h2>
+
+                    <p class="welcome-text">
+                        Track and manage your job applications.
+                    </p>
+
+                </div>
+
+                <div class="profile">
+
+                    <div class="notification">
+                        🔔
+                    </div>
+
+                    <div class="avatar">
+                        D
+                    </div>
+
+                    <div class="profile-info">
+
+                        <strong>Divyansh</strong>
+
+                        <span>Job Seeker</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- APPLICATION CONTENT -->
+
+            <section class="dashboard">
+
+                <!-- PAGE HEADER -->
+
+                <div class="applications-header">
+
+                    <div>
+
+                        <h2>My Applications</h2>
+
+                        <p>
+                            Keep track of all your job applications.
+                        </p>
+
+                    </div>
+
+                    <button
+                        class="primary-btn"
+                        id="addApplicationBtn"
+                    >
+                        + Add Application
+                    </button>
+
+                </div>
+
+
+                <!-- SEARCH + FILTER -->
+
+                <div class="filters">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search company or position..."
+                    >
+
+                    <select id="statusFilter">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="Applied">
+                            Applied
+                        </option>
+
+                        <option value="Interview">
+                            Interview
+                        </option>
+
+                        <option value="Offer">
+                            Offer
+                        </option>
+
+                        <option value="Rejected">
+                            Rejected
+                        </option>
+
+                        <option value="Withdrawn">
+                            Withdrawn
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- APPLICATION TABLE -->
+
+                <div class="applications-card">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Company</th>
+
+                                <th>Position</th>
+
+                                <th>Status</th>
+
+                                <th>Applied Date</th>
+
+                                <th>Actions</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="applicationsTable">
+
+                        </tbody>
+
+                    </table>
+
+
+                    <!-- EMPTY MESSAGE -->
+
+                    <div
+                        id="emptyMessage"
+                        class="empty-message"
+                    >
+                        No applications found.
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ADD APPLICATION MODAL -->
+
+    <div
+        class="modal-overlay"
+        id="applicationModal"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h2 id="modalTitle">
+                        Add Application
+                    </h2>
+
+                    <p>
+                        Add a new job application.
+                    </p>
+
+                </div>
+
+                <button
+                    class="close-btn"
+                    id="closeModalBtn"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="applicationForm">
+
+                <input
+                    type="hidden"
+                    id="editId"
+                >
+
+
+                <div class="form-group">
+
+                    <label for="company">
+                        Company Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="company"
+                        placeholder="e.g. Google"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="position">
+                        Job Position
+                    </label>
+
+                    <input
+                        type="text"
+                        id="position"
+                        placeholder="e.g. Frontend Intern"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="status">
+                            Status
+                        </label>
+
+                        <select id="status">
+
+                            <option value="Applied">
+                                Applied
+                            </option>
+
+                            <option value="Interview">
+                                Interview
+                            </option>
+
+                            <option value="Offer">
+                                Offer
+                            </option>
+
+                            <option value="Rejected">
+                                Rejected
+                            </option>
+
+                            <option value="Withdrawn">
+                                Withdrawn
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="date">
+                            Applied Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="date"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="jobUrl">
+                        Job URL
+                    </label>
+
+                    <input
+                        type="url"
+                        id="jobUrl"
+                        placeholder="https://..."
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="notes">
+                        Notes
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        placeholder="Add notes..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelBtn"
+                    >
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Save Application
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
