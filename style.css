@@ -1,6 +1,4 @@
-/* =========================
-   RESET
-========================= */
+/*Reset*/
 
 * {
     margin: 0;
@@ -9,9 +7,7 @@
 }
 
 
-/* =========================
-   BODY
-========================= */
+/* BODY */
 
 body {
     font-family: Arial, sans-serif;
@@ -20,9 +16,7 @@ body {
 }
 
 
-/* =========================
-   APP LAYOUT
-========================= */
+/* APP LAYOUT */
 
 .app {
     display: flex;
@@ -30,9 +24,7 @@ body {
 }
 
 
-/* =========================
-   SIDEBAR
-========================= */
+/* SIDEBAR */
 
 .sidebar {
     width: 240px;
@@ -65,7 +57,7 @@ body {
 }
 
 
-/* NAVIGATION */
+/*NAVIGATION*/
 
 .sidebar-nav {
     display: flex;
@@ -126,9 +118,7 @@ body {
 }
 
 
-/* =========================
-   MAIN CONTENT
-========================= */
+/* MAIN CONTENT*/
 
 .main-content {
     flex: 1;
@@ -137,10 +127,8 @@ body {
 }
 
 
-/* =========================
-   TOPBAR
-========================= */
-
+/* TOPBAR*/
+ 
 .topbar {
     height: 90px;
 
@@ -172,7 +160,7 @@ body {
 }
 
 
-/* PROFILE */
+/* PROFILE*/
 
 .profile {
     display: flex;
@@ -233,18 +221,11 @@ body {
 }
 
 
-/* =========================
-   DASHBOARD
-========================= */
+/* DASHBOARD*/
 
 .dashboard {
     padding: 35px;
 }
-
-
-/* =========================
-   STAT CARDS
-========================= */
 
 .stats-grid {
     display: grid;
@@ -306,11 +287,6 @@ body {
     font-size: 25px;
 }
 
-
-/* =========================
-   DASHBOARD GRID
-========================= */
-
 .dashboard-grid {
     display: grid;
 
@@ -318,11 +294,6 @@ body {
 
     gap: 20px;
 }
-
-
-/* =========================
-   CARD
-========================= */
 
 .card {
     background-color: rgb(255, 255, 255);
@@ -368,11 +339,6 @@ body {
     font-size: 13px;
 }
 
-
-/* =========================
-   CHART
-========================= */
-
 .chart-placeholder {
     height: 250px;
 
@@ -414,12 +380,6 @@ body {
 
     color: #64748b;
 }
-
-
-/* =========================
-   INTERVIEWS
-========================= */
-
 .interview-item {
     display: flex;
 
@@ -484,11 +444,6 @@ body {
 
     color: #94a3b8;
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media (max-width: 1000px) {
 
@@ -568,10 +523,6 @@ body {
     }
 
 }
-/* =========================
-   APPLICATIONS PAGE
-========================= */
-
 .applications-header {
     display: flex;
     align-items: center;
@@ -588,9 +539,6 @@ body {
     color: #64748b;
     font-size: 14px;
 }
-
-
-/* BUTTON */
 
 .primary-btn {
     background-color: #2563eb;
@@ -769,12 +717,7 @@ body {
 
     display: none;
 }
-
-
-/* =========================
-   MODAL
-========================= */
-
+/*modal*/
 .modal-overlay {
     position: fixed;
 

@@ -1,15 +1,7 @@
-// =========================
-// APPLICATION DATA
-// =========================
 
 let applications =
     JSON.parse(localStorage.getItem("applications")) || [];
 
-
-
-// =========================
-// GET HTML ELEMENTS
-// =========================
 
 const modal = document.getElementById("applicationModal");
 
@@ -37,11 +29,6 @@ const searchInput =
 const statusFilter =
     document.getElementById("statusFilter");
 
-
-// =========================
-// OPEN MODAL
-// =========================
-
 addApplicationBtn.addEventListener("click", function () {
 
     applicationForm.reset();
@@ -56,10 +43,6 @@ addApplicationBtn.addEventListener("click", function () {
 });
 
 
-// =========================
-// CLOSE MODAL
-// =========================
-
 function closeModal() {
 
     modal.classList.remove("show");
@@ -69,11 +52,6 @@ function closeModal() {
 closeModalBtn.addEventListener("click", closeModal);
 
 cancelBtn.addEventListener("click", closeModal);
-
-
-// =========================
-// SAVE APPLICATION
-// =========================
 
 applicationForm.addEventListener("submit", function (event) {
 
@@ -102,8 +80,6 @@ applicationForm.addEventListener("submit", function (event) {
         document.getElementById("editId").value;
 
 
-    // EDIT EXISTING APPLICATION
-
     if (editId) {
 
         applications = applications.map(function (application) {
@@ -127,8 +103,6 @@ applicationForm.addEventListener("submit", function (event) {
         });
 
     }
-
-    // ADD NEW APPLICATION
 
     else {
 
@@ -168,11 +142,6 @@ localStorage.setItem(
     closeModal();
 
 });
-
-
-// =========================
-// DISPLAY APPLICATIONS
-// =========================
 
 function renderApplications() {
 
@@ -284,10 +253,6 @@ function renderApplications() {
 }
 
 
-// =========================
-// FORMAT DATE
-// =========================
-
 function formatDate(date) {
 
     const dateObject = new Date(date);
@@ -305,9 +270,6 @@ function formatDate(date) {
 }
 
 
-// =========================
-// DELETE APPLICATION
-// =========================
 
 function deleteApplication(id) {
 
@@ -333,11 +295,6 @@ function deleteApplication(id) {
     renderApplications();
 
 }
-
-
-// =========================
-// EDIT APPLICATION
-// =========================
 
 function editApplication(id) {
 
@@ -387,20 +344,11 @@ function editApplication(id) {
 }
 
 
-// =========================
-// SEARCH
-// =========================
-
 searchInput.addEventListener("input", function () {
 
     renderApplications();
 
 });
-
-
-// =========================
-// FILTER
-// =========================
 
 statusFilter.addEventListener("change", function () {
 
@@ -408,9 +356,86 @@ statusFilter.addEventListener("change", function () {
 
 });
 
-
-// =========================
-// INITIAL DISPLAY
-// =========================
-
 renderApplications();
+   function updateDashboard() {
+
+    const applications =
+        JSON.parse(localStorage.getItem("applications")) || [];
+
+
+    const totalApplications =
+        applications.length;
+
+
+    const totalInterviews =
+        applications.filter(function (application) {
+
+            return application.status === "Interview";
+
+        }).length;
+
+
+    const totalOffers =
+        applications.filter(function (application) {
+
+            return application.status === "Offer";
+
+        }).length;
+
+
+    const totalRejected =
+        applications.filter(function (application) {
+
+            return application.status === "Rejected";
+
+        }).length;
+
+
+    const totalApplicationsElement =
+        document.getElementById("totalApplications");
+
+    const totalInterviewsElement =
+        document.getElementById("totalInterviews");
+
+    const totalOffersElement =
+        document.getElementById("totalOffers");
+
+    const totalRejectedElement =
+        document.getElementById("totalRejected");
+
+
+    if (totalApplicationsElement) {
+
+        totalApplicationsElement.textContent =
+            totalApplications;
+
+    }
+
+
+    if (totalInterviewsElement) {
+
+        totalInterviewsElement.textContent =
+            totalInterviews;
+
+    }
+
+
+    if (totalOffersElement) {
+
+        totalOffersElement.textContent =
+            totalOffers;
+
+    }
+
+
+    if (totalRejectedElement) {
+
+        totalRejectedElement.textContent =
+            totalRejected;
+
+    }
+
+}
+
+
+updateDashboard();
