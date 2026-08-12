@@ -106,23 +106,39 @@ applicationForm.addEventListener("submit", function (event) {
 
     else {
 
-        const newApplication = {
+        const location =
+    document.getElementById("location").value.trim();
 
-            id: Date.now(),
+const jobType =
+    document.getElementById("jobType").value;
 
-            company: company,
+const salary =
+    document.getElementById("salary").value.trim();
 
-            position: position,
 
-            status: status,
+const newApplication = {
 
-            date: date,
+    id: Date.now(),
 
-            jobUrl: jobUrl,
+    company: company,
 
-            notes: notes
+    position: position,
 
-        };
+    status: status,
+
+    date: date,
+
+    location: location,
+
+    jobType: jobType,
+
+    salary: salary,
+
+    jobUrl: jobUrl,
+
+    notes: notes
+
+};
 
         applications.push(newApplication);
        
